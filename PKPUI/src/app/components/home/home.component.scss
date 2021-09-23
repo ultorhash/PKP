@@ -1,0 +1,24 @@
+.home-container {
+    background-color: dimgrey;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    border: 2px solid white;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    margin: 4px;
+    background-color: dodgerblue;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}

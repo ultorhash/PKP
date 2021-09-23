@@ -1,0 +1,29 @@
+<nav>
+    <div class="left">
+        <div class="left-logo">
+            <img
+                src="../../../assets/pkp-logo.png"
+                alt="logo"
+            >
+        </div>
+        <div class="left-customer">
+            <h2>Witaj, {{ loggedCustomer.firstName }} {{ loggedCustomer.lastName }}</h2>
+        </div>          
+    </div>
+    <div class="right">
+        <button (click)="news()">Aktualności
+            <mat-icon>view_list</mat-icon>
+        </button>
+        <button>Szukaj połączenia
+            <mat-icon>train</mat-icon>
+        </button>
+        <button (click)="profile()">Profil
+            <mat-icon>person</mat-icon>
+        </button>
+        <button (click)="logout()">Wyloguj
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

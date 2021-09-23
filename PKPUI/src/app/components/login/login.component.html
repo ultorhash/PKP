@@ -1,0 +1,57 @@
+<div class="login-container">
+    <div class="login-container-left">
+        <form class="login-form"
+            [formGroup]="loginForm"
+            (ngSubmit)="submit(loginForm.value)">
+            <div class="login-form-logo">
+                <img
+                    src="../../../assets/pkp-logo.png"
+                    alt="company logo"
+                >
+            </div>
+            <mat-form-field appearance="standard">
+                <mat-label>Email</mat-label>
+                <input
+                    matInput
+                    type="text"
+                    formControlName="email"
+                >
+                <mat-error>Nie podano adresu email</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Hasło</mat-label>
+                <input
+                    matInput
+                    type="password"
+                    formControlName="password"
+                >
+                <mat-error>Nie podano hasła</mat-error>
+            </mat-form-field>
+            <mat-error
+                [style.visibility]="loginError ? 'visible' : 'hidden'"
+                class="login-error"
+            >
+                Nieprawidłowy email lub hasło
+            </mat-error>
+            <div class="login-form-buttons">
+                <button
+                mat-stroked-button
+                color="primary"
+                type="submit"
+                value="submit"
+            >
+                Zaloguj
+            </button>
+            <button
+                mat-stroked-button
+                color="primary"
+            >
+                Utwórz konto
+            </button>
+            </div>
+        </form>
+    </div>
+    <div class="login-container-right">
+        <img src="../../../assets/login-screen2.png" alt="login background image">
+    </div>
+</div>

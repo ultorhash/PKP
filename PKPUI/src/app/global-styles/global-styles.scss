@@ -1,0 +1,41 @@
+$color-palette: (
+    blue-shade: #2c84d4,
+    orange-shade: #f37c24
+);
+
+@mixin center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin menu-button {
+    width: 200px;
+    height: 50px;
+    margin: 0 10px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+    @include center-content;
+
+    mat-icon {
+        margin-left: 5px;
+    }
+
+    &:hover {
+        border-bottom: 2px solid get-color-from-palette(blue-shade);
+    }
+}
+
+@function get-color-from-palette($key) {
+    @if map-has-key($color-palette, $key) {
+        @return map-get($color-palette, $key);
+    }
+
+    @warn "Unknown `#{$key}` in color-palette";
+    @return null;
+}
